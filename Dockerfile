@@ -44,13 +44,13 @@ RUN curl -sSL https://github.com/jwilder/dockerize/releases/download/v0.0.2/dock
 RUN mkdir /opt/phpMyDomo
 RUN git clone https://github.com/phpMyDomo/phpMyDomo.git /opt/phpMyDomo
 
-#RUN chmod 755 /var/www/phpMyDomo/www/inc/bin/install_debian.sh
-#RUN ./install_debian.sh
+RUN chmod 755 /opt/phpMyDomo/www/inc/bin/install_debian.sh
+RUN /opt/phpMyDomo/www/inc/bin/install_debian.sh
 
-#RUN chmod -R 777 /var/www/phpMyDomo/www/inc/cache
+RUN chmod -R 777 /opt/phpMyDomo/www/inc/cache
 
-#RUN mv -f /home/USERNAME/phpMyDomo-phpMyDomo-XXXX/www/* /var/www/ 
-#RUN mv -f /home/USERNAME/phpMyDomo-phpMyDomo-XXXX/www/.htaccess /var/www/
+RUN mv -f /opt/phpMyDomo/www/* /var/www/ 
+RUN mv -f /opt/phpMyDomo/www/.htaccess /var/www/
 
 #RUN apache2ctl restart
 
